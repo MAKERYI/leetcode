@@ -15,6 +15,15 @@ const quickSort = array => {
   return quickSort(left).concat([target], quickSort(right))
 }
 
+// 1分钟快速版
+const quickSort1 = arr => {
+  if (arr.length <= 1) return arr
+  const flag = arr.shift()
+  const left = quickSort1(arr.filter(num => num <= flag))
+  const right = quickSort1(arr.filter(num => num >= flag))
+  return [...left, flag, ...right]
+}
+
 // 优化版
 const quickSort2 = (array, start, end) => {
   if (end - start < 1) return
@@ -39,4 +48,4 @@ const quickSort2 = (array, start, end) => {
 
 const arr = [1, 4, 6, 3, 5, 2]
 
-console.log(quickSort2(arr, 0, 5))
+console.log(quickSort1(arr))
