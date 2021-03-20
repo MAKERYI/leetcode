@@ -20,7 +20,7 @@ function postorderTraversal(root) {
       current = current.left
     }
     current = stack[stack.length - 1]
-    if (!current.right || current.right == last ) {
+    if (!current.right || current.right == last) {
       current = stack.pop()
       result.push(current.val)
       last = current
