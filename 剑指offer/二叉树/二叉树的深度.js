@@ -22,7 +22,6 @@ function getDepth(root) {
   if (!root) return 0
   let queue = [root]
   let res = 0
-  
   while (queue.length) {
     let levelNum = queue.length
     res++
@@ -32,6 +31,5 @@ function getDepth(root) {
       if (node.right) queue.push(node.right)
     }
   }
-
   return res
 }
